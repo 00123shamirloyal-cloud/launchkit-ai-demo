@@ -1,0 +1,16 @@
+<?php
+
+/*
+ * Optional relationship snippet for App\Models\Project.
+ * Merge the import and method into your existing Project model; do not replace it.
+ * The ProjectUpdate model/table should belong to the project and contain a text
+ * column such as body, content, message, description, or title, plus created_at.
+ */
+
+use App\Models\ProjectUpdate;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+
+public function updates(): HasMany
+{
+    return $this->hasMany(ProjectUpdate::class)->latest();
+}
